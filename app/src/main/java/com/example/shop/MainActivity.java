@@ -3,6 +3,7 @@ package com.example.shop;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -87,13 +88,17 @@ public class MainActivity extends AppCompatActivity {
                             loadingBar.dismiss();
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
+                        }else if(dataSnapshot.child("Admins").child(phone).exists()){
+                            ReduceCodeAdmin(dataSnapshot,"Admins", phone, password);
                         }else {
                             loadingBar.dismiss();
                             Toast.makeText(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
                         }
                     }
 
-                }else {
+                } else if (dataSnapshot.child("Admins").child(phone).exists()){
+                    ReduceCodeAdmin(dataSnapshot,"Admins", phone, password);
+                } else {
                     Toast.makeText(MainActivity.this, "Account with this " + phone + " number don't exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
@@ -104,5 +109,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private void ReduceCodeAdmin(DataSnapshot dataSnapshot, String s,String phone, String password){
+        Users usersData = dataSnapshot.child(s).child(phone).getValue(Users.class);
+
+        if(usersData.getPhone().equals(phone)){
+            if (usersData.getPassword().equals(password)){
+                Toast.makeText(MainActivity.this, "Please wait, you are already logged...", Toast.LENGTH_SHORT).show();
+                loadingBar.dismiss();
+                Intent intent = new Intent(MainActivity.this, AdminCategoryActivity.class);
+                startActivity(intent);
+            }else {
+                loadingBar.dismiss();
+                Toast.makeText(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
