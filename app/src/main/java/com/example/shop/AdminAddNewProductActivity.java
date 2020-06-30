@@ -97,11 +97,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
 
     private void OpenGallery() {
-//        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-//        //galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-//       // galleryIntent.setType("image/*");
-//        startActivityForResult(galleryIntent, GalleryPick);
-        //Create an Intent with action as ACTION_PICK
+
         Intent intent=new Intent(Intent.ACTION_PICK);
         // Sets the type as image/*. This ensures only components of type image are selected
         intent.setType("image/*");
@@ -117,10 +113,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-//        if(requestCode == RESULT_OK && requestCode == GalleryPick && data != null){
-//            ImageUri = data.getData();
-//            InputProductImage.setImageURI(ImageUri);
-//        }
         if (resultCode == RESULT_OK)
             switch (requestCode){
                 case GalleryPick:
@@ -167,9 +159,9 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         saveCurrentDate               = currentDate.format(calendar.getTime());
 
         SimpleDateFormat currentTime  = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime               = currentDate.format(calendar.getTime());
+        saveCurrentTime               = currentTime.format(calendar.getTime());
 
-        productRandomKey              = saveCurrentDate + saveCurrentTime;
+        productRandomKey              = saveCurrentDate +" "+saveCurrentTime;
 
         final StorageReference fliePath = productImageRef.child(ImageUri.getLastPathSegment() + productRandomKey + ".jpg");
         final UploadTask uploadTask = fliePath.putFile(ImageUri);

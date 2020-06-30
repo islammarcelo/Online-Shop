@@ -1,7 +1,10 @@
 package com.example.shop;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.shop.Model.Users;
 import com.example.shop.Prevalent.Prevalent;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
     private Button joinNowButton, loginButton;
     private ProgressDialog loadingBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         joinNowButton = findViewById(R.id.main_login_now_btn);
         loginButton = findViewById(R.id.main_login_btn);
@@ -70,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 
     private void AllowAccess(final String phone, final String password) {
         final DatabaseReference RootRef;
