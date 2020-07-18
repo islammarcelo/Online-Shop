@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Please wait, you are already logged...", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                            Prevalent.currentOnlineUser = usersData;
                             startActivity(intent);
                         }else if(dataSnapshot.child("Admins").child(phone).exists()){
                             ReduceCodeAdmin(dataSnapshot,"Admins", phone, password);

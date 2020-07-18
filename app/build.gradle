@@ -44,6 +44,8 @@ dependencies {
     implementation 'io.paperdb:paperdb:2.7.1'
     //for circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //for crop image
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.firebaseui:firebase-ui-database:3.2.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
