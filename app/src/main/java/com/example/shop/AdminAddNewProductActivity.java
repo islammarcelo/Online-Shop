@@ -127,7 +127,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
        description = InputProductDescription.getText().toString();
        price       = InputProductPrice.getText().toString();
-       productName = InputProductPrice.getText().toString();
+       productName = InputProductName.getText().toString();
 
        if(ImageUri == null){
            Toast.makeText(this, "Product image is mandatory", Toast.LENGTH_SHORT).show();
@@ -212,7 +212,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("time", saveCurrentTime);
         productMap.put("image", downloadImageUrl);
         productMap.put("category", categoryName);
-        productMap.put("product name", productName);
+        productMap.put("pname", productName);
         productMap.put("description", description);
         productMap.put("price", price);
 
