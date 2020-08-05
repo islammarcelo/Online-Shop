@@ -80,7 +80,8 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         SimpleDateFormat currentTime  = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime               = currentTime.format(calendar.getTime());
 
-        final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
+        final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders")
+                .child(Prevalent.currentOnlineUser.getPhone());
 
         HashMap<String, Object> orders = new HashMap<>();
         orders.put("totalPrice", totalPrice);
