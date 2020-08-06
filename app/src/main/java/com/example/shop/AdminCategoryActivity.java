@@ -5,18 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+
+import io.paperdb.Paper;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
     private ImageView tShirts, sportsTShirts, femaleDresses, sweathers;
     private ImageView glasses, hatsCaps, walletsBagsPurses, shoes;
     private ImageView headPhonesHandFree, laptops, watches, mobilePhones;
+    private Button logoutButton, checkOrdersButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
+
+        logoutButton = findViewById(R.id.logout_btn);
+        checkOrdersButton = findViewById(R.id.check_orders_btn);
 
         tShirts       = findViewById(R.id.t_shirts);
         sportsTShirts = findViewById(R.id.sports_t_shirts);
@@ -32,6 +39,25 @@ public class AdminCategoryActivity extends AppCompatActivity {
         laptops = findViewById(R.id.laptops);
         watches = findViewById(R.id.watches);
         mobilePhones = findViewById(R.id.mobiles);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Paper.book().destroy();
+                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        checkOrdersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrdersActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
 
 
         tShirts.setOnClickListener(new View.OnClickListener() {

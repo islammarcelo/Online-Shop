@@ -35,7 +35,7 @@ import io.paperdb.Paper;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
-    private Button LogoutButton, AddNewProductButton;
+    private Button  AddNewProductButton;
     private String categoryName, description, price, productName, saveCurrentDate, saveCurrentTime;
     private ImageView InputProductImage;
     private EditText InputProductName, InputProductDescription, InputProductPrice;
@@ -54,7 +54,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
 
-        LogoutButton            = findViewById(R.id.logout_btn);
 
         AddNewProductButton     = findViewById(R.id.add_new_product);
         InputProductName        = findViewById(R.id.product_name);
@@ -69,14 +68,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         categoryName            = getIntent().getExtras().get("category").toString();
         Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
 
-        LogoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Paper.book().destroy();
-                Intent intent = new Intent(AdminAddNewProductActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         InputProductImage.setOnClickListener(new View.OnClickListener() {
             @Override

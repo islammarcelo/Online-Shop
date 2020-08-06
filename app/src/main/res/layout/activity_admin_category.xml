@@ -125,5 +125,30 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check New Orders"
+        android:layout_above="@+id/logout_btn"
+        android:textSize="20sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+
 
 </RelativeLayout>
