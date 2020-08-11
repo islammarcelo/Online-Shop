@@ -15,8 +15,6 @@
         android:layout_centerHorizontal="true"
         >
 
-
-
                 <EditText
                     android:id="@+id/search_product_name"
                     android:layout_width="320dp"
@@ -49,6 +47,7 @@
 
 
     </RelativeLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/search_list"

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.shop.Admin.AdminCategoryActivity;
 import com.example.shop.Model.Users;
 import com.example.shop.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar; /// load bar
     public String parentDBName = "Users";
     private CheckBox checkBoxRememberMe;
-    private TextView AdminLink, NotAdminLink;
+    private TextView AdminLink, NotAdminLink, forgetPasswordLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         inputPhoneNumber = findViewById(R.id.login_phone_number_input);
         AdminLink = findViewById(R.id.admin_panel_link);
         NotAdminLink = findViewById(R.id.not_admin_panel_link);
+        forgetPasswordLink = findViewById(R.id.forget_password_link);
+
         loadingBar = new ProgressDialog(this);
 
         checkBoxRememberMe = findViewById(R.id.remember_me_chkb);
@@ -73,6 +76,15 @@ public class LoginActivity extends AppCompatActivity {
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDBName = "Users";
+            }
+        });
+
+        forgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("check", "login");
+                startActivity(intent);
             }
         });
     }
