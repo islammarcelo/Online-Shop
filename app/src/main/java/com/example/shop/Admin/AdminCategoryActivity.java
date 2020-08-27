@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.shop.HomeActivity;
-import com.example.shop.MainActivity;
+import com.example.shop.Buyers.HomeActivity;
+import com.example.shop.Buyers.MainActivity;
 import com.example.shop.R;
 
 import io.paperdb.Paper;
