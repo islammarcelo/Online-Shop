@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminCheckApproveProductActivity">
 
     <RelativeLayout
-        android:id="@+id/r7"
+        android:id="@+id/r3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
         android:layout_alignParentTop="true">
 
         <TextView
-            android:id="@+id/seller_new_products"
+            android:id="@+id/approve_new_products"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seller Products"
+            android:text="Approve New Products"
             android:textSize="20sp"
             android:textColor="@android:color/white"
             android:textAlignment="center"
@@ -26,23 +27,12 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/seller_product_list"
+        android:id="@+id/approve_product_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/r7"
-        android:layout_above="@+id/nav_view"
+        android:layout_below="@+id/r3"
         android:orientation="vertical">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_nav_menu" />
-
-
 
 </RelativeLayout>

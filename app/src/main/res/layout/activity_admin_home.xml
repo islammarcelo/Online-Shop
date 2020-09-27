@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminHomeActivity">
+
+    <TextView
+        android:id="@+id/admin_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin Home"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check New Orders"
+        android:layout_below="@id/admin_home"
+        android:textSize="20sp"
+       android:layout_margin="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/maintain_products_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maintain Product"
+        android:layout_below="@id/check_orders_btn"
+        android:textSize="20sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/check_approve_products_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Approve Products"
+        android:layout_below="@id/maintain_products_btn"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>

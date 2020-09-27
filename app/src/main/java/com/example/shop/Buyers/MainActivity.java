@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.shop.Admin.AdminCategoryActivity;
+import com.example.shop.Admin.AdminHomeActivity;
+import com.example.shop.Sellers.SellerProductCategoryActivity;
 import com.example.shop.Model.Users;
 import com.example.shop.Prevalent.Prevalent;
 import com.example.shop.R;
-import com.example.shop.Sellers.SellerHomeActivity;
 import com.example.shop.Sellers.SellerRegistrationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             if (usersData.getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Please wait, you are already logged...", Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
-                Intent intent = new Intent(MainActivity.this, AdminCategoryActivity.class);
+                Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
                 startActivity(intent);
             }else {
                 loadingBar.dismiss();

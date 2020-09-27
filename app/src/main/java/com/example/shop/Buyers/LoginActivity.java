@@ -14,7 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.shop.Admin.AdminCategoryActivity;
+import com.example.shop.Admin.AdminHomeActivity;
+import com.example.shop.Sellers.SellerProductCategoryActivity;
 import com.example.shop.Model.Users;
 import com.example.shop.Prevalent.Prevalent;
 import com.example.shop.R;
@@ -133,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(parentDBName.equals("Admins")){
                                 Toast.makeText(LoginActivity.this, "Welcome Admin, yau are logged in successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                             }else {
                                 Toast.makeText(LoginActivity.this, "logged in successfully...", Toast.LENGTH_SHORT).show();

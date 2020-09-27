@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.shop.Admin.AdminCategoryActivity;
+import com.example.shop.Sellers.SellerProductCategoryActivity;
 import com.example.shop.Admin.AdminMaintainProductsActivity;
 import com.example.shop.Model.Product;
 import com.example.shop.Prevalent.Prevalent;
@@ -111,7 +111,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         FirebaseRecyclerOptions<Product> options =
                 new FirebaseRecyclerOptions.Builder<Product>()
-                        .setQuery(productRer, Product.class).build();
+                        .setQuery(productRer.orderByChild("productState").equalTo("Approve"), Product.class).build();
 
         FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
@@ -150,7 +150,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                                                         if (task.isSuccessful()){
 
                                                             Toast.makeText(HomeActivity.this, "Remove Product Successfully", Toast.LENGTH_SHORT).show();
-                                                            Intent intent = new Intent(HomeActivity.this, AdminCategoryActivity.class);
+                                                            Intent intent = new Intent(HomeActivity.this, SellerProductCategoryActivity.class);
                                                             startActivity(intent);
                                                             finish();
                                                         }
